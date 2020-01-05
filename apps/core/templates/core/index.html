@@ -1,5 +1,28 @@
 {% extends 'base.html'%}
 
 {% block main %}
-SEJA BEM VINDO
+    <div class="row">
+
+        <div class="col-sm">
+            HOME
+        </div>
+
+        <div class="col-sm">
+            SEJA BEM VINDO {{usuario.funcionario.nome}}
+        </div>
+
+        <div class="col-sm">
+            <a href="{% url 'logout' %}">LOGOUT</a>
+            {% if usuario.funcionario.empresa %}
+                <a href="">EDITAR EMPRESA</a>
+            {% else %}
+                <a href="">CRIAR EMPRESA</a>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+
+
 {% endblock %}
